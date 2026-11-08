@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="te">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>దీపావళి శుభాకాంక్షలు</title>
+<title>Happy Diwali</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Telugu:wght@400;500&family=Noto+Serif+Telugu:wght@400;500&display=swap" rel="stylesheet">
 <style>
@@ -37,7 +37,7 @@ h1{font-family:"Noto Serif Telugu",Georgia,serif;font-weight:400;font-size:clamp
 .flame{transform-origin:50% 100%;opacity:0;transform:scale(.2);transition:opacity .4s,transform .4s}
 .lit .flame{opacity:1;transform:scale(1);animation:flick .45s ease-in-out infinite alternate}
 @keyframes flick{from{transform:scale(1) rotate(-3deg)}to{transform:scale(1.08,1.14) rotate(3deg)}}
-.top,.mid{width:min(100%,760px);padding:0 12px;border-radius:20px;background:linear-gradient(90deg,rgba(20,8,43,.35),rgba(20,8,43,.78) 15%,rgba(20,8,43,.78) 85%,rgba(20,8,43,.35))}
+.top,.mid{width:min(100%,760px);padding:0 12px;border-radius:20px;text-shadow:0 2px 8px #14082b,0 0 18px #14082b}
 .halo{opacity:0;transition:opacity .6s}
 .lit .halo{opacity:1}
 .controls{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;align-items:center}
@@ -54,20 +54,20 @@ button.cta:focus-visible{outline:2px solid var(--marigold);outline-offset:3px}
 <img class="deity deity--krishna" src="krishna-photo.jpeg" alt="" aria-hidden="true">
 <main>
   <div class="top">
-    <p class="telugu">దీపావళి శుభాకాంక్షలు</p>
-    <h1>శుభ దీపావళి</h1>
-    <p class="msg">మీ ఇల్లు వెలుగులు, నవ్వులు, మిఠాయిలతో నిండిపోవాలని, రాబోయే ప్రతి రోజు ఈ రాత్రిలా ప్రకాశించాలని మనస్ఫూర్తిగా కోరుకుంటున్నాను.</p>
-    <div class="from">శుభాకాంక్షలతో, Dwwarakanadha Reddy</div>
+    <p class="telugu">Wishing you a bright and joyful Diwali</p>
+    <h1>Happy Diwali</h1>
+    <p class="msg">May your home be filled with light, laughter, and sweets, and may every day ahead shine as brightly as tonight.</p>
+    <div class="from">Best wishes, Dwwarakanadha Reddy</div>
   </div>
   <div class="mid">
-    <div class="hint" id="hint">దీపాలను వెలిగించడానికి ఒక్కొక్కటిగా తాకండి</div>
+    <div class="hint" id="hint">Tap each diya to light it</div>
     <div>
       <div class="row" id="row"></div>
       <div class="floor"></div>
     </div>
     <div class="controls">
-      <button class="cta" id="music-button" type="button" aria-pressed="false">కృష్ణుడి వేణువు వినండి</button>
-      <button class="cta" id="sky" type="button">ఆకాశాన్ని వెలిగించండి</button>
+      <button class="cta" id="music-button" type="button" aria-pressed="false">Play Krishna's flute</button>
+      <button class="cta" id="sky" type="button">Light up the sky</button>
     </div>
   </div>
 </main>
@@ -77,7 +77,7 @@ button.cta:focus-visible{outline:2px solid var(--marigold);outline-offset:3px}
   var cv=document.getElementById('fx'),ctx=cv.getContext('2d');
   var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var W,H,dpr=Math.min(window.devicePixelRatio||1,2);
-  function resize(){W=innerWidth;H=innerHeight;cv.width=W*dpr;cv.height=H*dpr;ctx.setTransform(dpr,0,0,dpr,0,0);ctx.fillStyle='#14082b';ctx.fillRect(0,0,W,H)}
+  function resize(){W=innerWidth;H=innerHeight;cv.width=W*dpr;cv.height=H*dpr;ctx.setTransform(dpr,0,0,dpr,0,0)}
   resize();addEventListener('resize',resize);
   var parts=[],rockets=[];
   var hues=[38,28,330,48,18,290];
@@ -92,8 +92,8 @@ button.cta:focus-visible{outline:2px solid var(--marigold);outline-offset:3px}
   function launch(x,ty,hue){rockets.push({x:x,y:H,ty:ty,vy:-rnd(8,11),h:hue})}
   function sky(n){for(var i=0;i<n;i++)setTimeout(function(){launch(rnd(W*.1,W*.9),rnd(H*.12,H*.5),hues[Math.floor(Math.random()*hues.length)])},i*260)}
   function frame(){
-    ctx.globalCompositeOperation='source-over';
-    ctx.fillStyle='rgba(20,8,43,.22)';ctx.fillRect(0,0,W,H);
+    ctx.globalCompositeOperation='destination-in';
+    ctx.fillStyle='rgba(0,0,0,.78)';ctx.fillRect(0,0,W,H);
     ctx.globalCompositeOperation='lighter';
     for(var i=rockets.length-1;i>=0;i--){
       var r=rockets[i];r.y+=r.vy;r.vy*=.985;
@@ -121,7 +121,7 @@ button.cta:focus-visible{outline:2px solid var(--marigold);outline-offset:3px}
     '<circle cx="50" cy="72" r="3" fill="#ffb000" opacity=".8"/></svg>';
   var row=document.getElementById('row'),hint=document.getElementById('hint'),lit=0,total=5,done=false;
   for(var k=0;k<total;k++){
-    var b=document.createElement('button');b.className='diya';b.type='button';b.setAttribute('aria-label','దీపం వెలిగించండి '+(k+1));b.setAttribute('aria-pressed','false');b.innerHTML=diyaSVG.replace(/id="(hg|cl|fl)"/g,'id="$1'+k+'"').replace(/url\(#(hg|cl|fl)\)/g,'url(#$1'+k+')');
+    var b=document.createElement('button');b.className='diya';b.type='button';b.setAttribute('aria-label','Light diya '+(k+1));b.setAttribute('aria-pressed','false');b.innerHTML=diyaSVG.replace(/id="(hg|cl|fl)"/g,'id="$1'+k+'"').replace(/url\(#(hg|cl|fl)\)/g,'url(#$1'+k+')');
     b.addEventListener('click',onDiya);row.appendChild(b);
   }
   function onDiya(e){
@@ -130,19 +130,19 @@ button.cta:focus-visible{outline:2px solid var(--marigold);outline-offset:3px}
     b.classList.add('lit');b.setAttribute('aria-pressed','true');lit++;
     var rc=b.getBoundingClientRect();
     launch(rc.left+rc.width/2,rnd(H*.15,H*.45),hues[lit%hues.length]);
-    if(lit<total){hint.textContent='ఇంకా '+(total-lit)+' దీపాలు వెలిగించండి'}
-    else if(!done){done=true;hint.textContent='దీపావళి శుభాకాంక్షలు! వెలుగు ఎల్లప్పుడూ విజయం సాధించాలి.';sky(reduce?4:14)}
+    if(lit<total){hint.textContent=(total-lit)+' more to go'}
+    else if(!done){done=true;hint.textContent='Happy Diwali! May light always triumph.';sky(reduce?4:14)}
   }
   document.getElementById('sky').addEventListener('click',function(){sky(reduce?3:8)});
   var music=document.getElementById('music'),musicButton=document.getElementById('music-button');
   musicButton.addEventListener('click',function(){
     if(music.paused){
-      music.play().then(function(){musicButton.textContent='సంగీతాన్ని ఆపండి';musicButton.setAttribute('aria-pressed','true')}).catch(function(){
+      music.play().then(function(){musicButton.textContent='Pause music';musicButton.setAttribute('aria-pressed','true')}).catch(function(){
         musicButton.setAttribute('aria-pressed','false');
-        hint.textContent='పాట ఫైల్‌ను ఈ HTML ఫైల్ ఉన్న ఫోల్డర్‌లో ఉంచండి.';
+        hint.textContent='Place the music file in the same folder as this page.';
       });
     }else{
-      music.pause();musicButton.textContent='కృష్ణుడి వేణువు వినండి';musicButton.setAttribute('aria-pressed','false');
+      music.pause();musicButton.textContent="Play Krishna's flute";musicButton.setAttribute('aria-pressed','false');
     }
   });
   document.addEventListener('pointerdown',function(e){
