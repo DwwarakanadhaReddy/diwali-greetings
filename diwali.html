@@ -71,7 +71,7 @@ button.cta:focus-visible{outline:2px solid var(--marigold);outline-offset:3px}
     </div>
   </div>
 </main>
-<audio id="music" src="karthikeya2_anupam_bgm.mp3" loop preload="none"></audio>
+<audio id="music" src="karthikeya2_anupam_bgm.mp3" preload="none"></audio>
 <script>
 (function(){
   var cv=document.getElementById('fx'),ctx=cv.getContext('2d');
@@ -135,6 +135,7 @@ button.cta:focus-visible{outline:2px solid var(--marigold);outline-offset:3px}
   }
   document.getElementById('sky').addEventListener('click',function(){sky(reduce?3:8)});
   var music=document.getElementById('music'),musicButton=document.getElementById('music-button');
+  music.addEventListener('ended',function(){musicButton.textContent="Play Krishna's flute";musicButton.setAttribute('aria-pressed','false')});
   musicButton.addEventListener('click',function(){
     if(music.paused){
       music.play().then(function(){musicButton.textContent='Pause music';musicButton.setAttribute('aria-pressed','true')}).catch(function(){
