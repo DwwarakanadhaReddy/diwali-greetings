@@ -18,7 +18,7 @@ html{scroll-padding-top:env(safe-area-inset-top,0px);height:100%}
 body{margin:0;height:100%;background:radial-gradient(ellipse at 50% 110%,var(--plum),var(--night) 70%);color:var(--cream);font-family:"Noto Sans Telugu",system-ui,sans-serif;overflow:hidden}
 canvas{position:fixed;inset:0;width:100%;height:100%;display:block}
 canvas{z-index:1;pointer-events:none}
-.deity{position:fixed;z-index:0;bottom:2vh;height:min(70vh,620px);width:min(28vw,250px);object-fit:contain;opacity:.5;pointer-events:none;filter:drop-shadow(0 0 24px rgba(255,176,0,.2))}
+.deity{position:fixed;z-index:0;bottom:2vh;height:min(70vh,620px);width:min(28vw,250px);object-fit:contain;opacity:.85;pointer-events:none;filter:drop-shadow(0 0 24px rgba(255,176,0,.2))}
 .deity--rama{left:1.5vw}
 .deity--krishna{right:1.5vw}
 main{position:relative;z-index:2;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:space-between;text-align:center;padding:6vh 20px 4vh}
@@ -50,8 +50,8 @@ button.cta:focus-visible{outline:2px solid var(--marigold);outline-offset:3px}
 </head>
 <body>
 <canvas id="fx" aria-hidden="true"></canvas>
-<img class="deity deity--rama" src="rama.svg" alt="" aria-hidden="true">
-<img class="deity deity--krishna" src="krishna.svg" alt="" aria-hidden="true">
+<img class="deity deity--rama" src="rama-photo.png" alt="" aria-hidden="true">
+<img class="deity deity--krishna" src="krishna-photo.jpeg" alt="" aria-hidden="true">
 <main>
   <div class="top">
     <p class="telugu">దీపావళి శుభాకాంక్షలు</p>
