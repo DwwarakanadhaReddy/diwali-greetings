@@ -18,10 +18,10 @@ html{scroll-padding-top:env(safe-area-inset-top,0px);height:100%}
 body{margin:0;height:100%;background:radial-gradient(ellipse at 50% 110%,var(--plum),var(--night) 70%);color:var(--cream);font-family:"Noto Sans Telugu",system-ui,sans-serif;overflow:hidden}
 canvas{position:fixed;inset:0;width:100%;height:100%;display:block}
 canvas{z-index:1;pointer-events:none}
-.deity{position:fixed;z-index:0;bottom:2vh;height:min(70vh,620px);width:min(28vw,250px);object-fit:contain;opacity:.85;pointer-events:none;filter:drop-shadow(0 0 24px rgba(255,176,0,.2))}
+.deity{position:fixed;z-index:2;bottom:2vh;width:min(35vw,320px);max-height:72vh;object-fit:contain;opacity:.95;pointer-events:none;filter:drop-shadow(0 0 24px rgba(255,176,0,.2))}
 .deity--rama{left:1.5vw}
 .deity--krishna{right:1.5vw}
-main{position:relative;z-index:2;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:space-between;text-align:center;padding:6vh 20px 4vh}
+main{position:relative;z-index:3;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:space-between;text-align:center;padding:6vh 20px 4vh}
 .top{margin-top:4vh}
 .telugu{font-family:"Noto Serif Telugu",serif;font-size:clamp(1.1rem,3.4vw,1.6rem);color:var(--marigold);margin:0 0 6px}
 h1{font-family:"Noto Serif Telugu",Georgia,serif;font-weight:400;font-size:clamp(2.4rem,10vw,6rem);line-height:1.2;margin:0;background:linear-gradient(180deg,#fff6d6,var(--marigold) 55%,var(--saffron));-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 0 22px rgba(255,150,0,.45));animation:glow 3.2s ease-in-out infinite alternate}
